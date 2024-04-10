@@ -810,7 +810,7 @@ body > footer .copyrights {
 
 .custom-page-content .page-header.color-1 {
   background-color: #000000;
-  background-image: url(../images/sp_main_bg.png);
+  background-image: url(../images/wall.jpg);
   background-size: cover;
   -webkit-background-size: cover;
   background-attachment: scroll;
@@ -842,7 +842,7 @@ body > footer .copyrights {
   background-color: #000000;
   padding: 50px;
   margin-bottom: 25px;
-  background-image: url(../images/sp_main_bg.png);
+  background-image: url(../images/wall.jpg);
   background-size: cover;
   -webkit-background-size: cover;
   background-attachment: scroll;
