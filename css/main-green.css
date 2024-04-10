@@ -61,7 +61,7 @@ body {
   width: 100%;
   font-size: 15px;
   line-height: 1.6em;
-  background-color: #f5f5f5;
+  background-color: #111111; /** alterar fundo**/
   overflow-x: hidden;
   overflow-y: auto;
   background-image: url(../images/main_bg.png);
@@ -640,7 +640,7 @@ body > footer .copyrights {
 }
 
 .site-title {
-  color: #49515d;
+  color: #626263;
   font-size: 20px;
   font-weight: 500;
   font-family: 'Montserrat', Helvetica, sans-serif;
@@ -649,7 +649,7 @@ body > footer .copyrights {
 }
 
 .site-title span {
-  color: #000000;
+  color: #ffffff;
 }
 
 .header.sticked .site-title {
@@ -694,7 +694,7 @@ body > footer .copyrights {
   padding: 8px 0;
   margin: 0 20px;
   text-align: center;
-  color: #49515d;
+  color: #ffffff;
   font-size: 15px;
   line-height: 1;
   font-weight: 400;
@@ -788,7 +788,7 @@ body > footer .copyrights {
 }
 
 .block-title h3 span {
-  color: #000000;
+  color: #25252591;
 }
 
 .custom-page-content .block {
