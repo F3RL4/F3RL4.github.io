@@ -312,13 +312,27 @@ textarea.form-control, textarea.form-control:focus {
 
 /* Social-links buttons */
 .social-links .btn {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 50%;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 2.8;
+  padding: 0 1.5em;
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #212121;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   display: inline-block;
   margin: 5px;
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.3);
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 50%;
 }
 
 .social-links .btn i {
@@ -327,8 +341,8 @@ textarea.form-control, textarea.form-control:focus {
 }
 
 .social-links .btn:hover {
-  background-color: #28a745; /* Ajuste conforme o estilo do botão de download */
-  color: #fff;
+  background-color: #f0f0f0;
+  color: #212121;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.3);
 }
 
