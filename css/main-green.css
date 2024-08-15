@@ -310,36 +310,6 @@ textarea.form-control, textarea.form-control:focus {
   text-align: center;
 }
 
-/* Social-links buttons */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 10px; /* Espaçamento entre os botões */
-}
-
-.social-links .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #000000; /* Mesma cor do botão de download */
-  color: #fff;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.3);
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-}
-
-.social-links .btn i {
-  font-size: 20px; /* Tamanho do ícone */
-}
-
-.social-links .btn:hover {
-  background-color: #28a745; /* Cor do efeito hover */
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.3);
-}
-
 /* buttons */
 .btn-primary,
 .btn-secondary,
