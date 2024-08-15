@@ -311,34 +311,31 @@ textarea.form-control, textarea.form-control:focus {
 }
 
 /* Social-links buttons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
 .social-links .btn {
-  text-transform: uppercase;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 2.8;
-  outline: none;
-  border: 0;
-  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   background-color: #000000; /* Mesma cor do botão de download */
   color: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.3);
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-  display: inline-block;
-  margin: 5px;
-  width: 36px;
-  height: 36px;
-  text-align: center;
-  border-radius: 50%;
 }
 
 .social-links .btn i {
-  line-height: 36px;
-  font-size: 16px;
+  font-size: 20px; /* Tamanho do ícone */
 }
 
 .social-links .btn:hover {
-  background-color: #28a745; /* Cor do efeito hover, ajuste conforme necessário */
+  background-color: #28a745; /* Cor do efeito hover */
   color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.3);
 }
