@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar QR Code</title>
+    <script src="js/qrcode.js"></script> <!-- Inclua a biblioteca QRCode.js -->
+    <link rel="stylesheet" href="css/main-green.css">
+
+    <style>
+        body {
+            background-color: #111111;
+            color: #fff;
+            font-family: 'Roboto', Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+            margin: 0;
+            padding: 50px 0;
+            overflow: auto; /* Permite rolar a página */
+        }
+        .qr-code-container {
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: auto;
+            margin-top: 20px;
+            display: inline-block;
+            max-width: 100%; /* Permite que o contêiner cresça conforme o QR Code */
+        }
+        .form-control {
+            width: calc(100% - 20px); /* Largura ajustável */
+            max-width: 300px;
+            padding: 8px;
+            margin: 10px auto;
+            background: #333;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+            transition: none;
+            text-align: center; /* Centraliza o texto dentro da caixa */
+        }
+        .form-control:focus {
+            background: #333; /* Mesma cor do fundo */
+            border: 1px solid #444; /* Mesma cor da borda */
+            box-shadow: none; /* Remove a sombra padrão */
+        }
+        .btn {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background-color: #33ff00;
+        }
+        #save-btn {
+            margin-left: 10px;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        #save-btn.enabled {
+            opacity: 1;
+            cursor: pointer;
+        }
+        #qrcode-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            overflow: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .description {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="qr-code-container">
+        <h1>Gerador de QR Code</h1>
+        <div class="description">Insira a URL ou texto desejado:</div>
+        <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control">
+        <div class="description">Insira o tamanho que deseja (100 a 1000 pixels):</div>
+        <input type="number" id="size" value="300" min="100" max="1000" class="form-control">
+        <div>
+            <button class="btn" onclick="gerarQRCode()">Gerar QR Code</button>
+            <button class="btn" id="save-btn" onclick="salvarQRCode()">Salvar como PNG</button>
+        </div>
+        <div id="qrcode-container">
+            <div id="qrcode"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function gerarQRCode() {
+            var url = document.getElementById("url").value;
+            var size = parseInt(document.getElementById("size").value);
+
+            if (!url) {
+                alert("Por favor, insira uma URL ou texto.");
+                return;
+            }
+
+            if (isNaN(size) || size < 100 || size > 1000) {
+                alert("Por favor, insira um tamanho válido entre 100 e 1000 pixels.");
+                return;
+            }
+
+            // Limpa o QR code anterior, se houver
+            document.getElementById("qrcode").innerHTML = "";
+
+            // Gera o QR code
+            new QRCode(document.getElementById("qrcode"), {
+                text: url,
+                width: size,
+                height: size
+            });
+
+            // Habilita o botão de salvar após a geração do QR code
+            var saveBtn = document.getElementById("save-btn");
+            saveBtn.classList.add("enabled");
+            saveBtn.disabled = false;
+        }
+
+        function salvarQRCode() {
+            var canvas = document.querySelector("#qrcode canvas");
+            if (canvas) {
+                var link = document.createElement("a");
+                link.href = canvas.toDataURL("image/png");
+                link.download = "qrcode.png";
+                link.click();
+            } else {
+                alert("Por favor, gere um QR Code primeiro.");
+            }
+        }
+    </script>
+
+</body>
+</html>
