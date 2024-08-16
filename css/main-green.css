@@ -1048,6 +1048,16 @@ body > footer .copyrights {
   border-left: 1px solid #e0e0e0;
 }
 
+/* Estilo padrão do link */
+.timeline-item .item-small a {
+  color: inherit; /* Herda a cor de item-small */
+  text-decoration: none;
+}
+
+/* Mudança de cor no hover */
+.timeline-item .item-small a:hover {
+  color: rgb(27, 168, 22); /* Muda para verde no hover */
+}
 
 
 /* Skills */
