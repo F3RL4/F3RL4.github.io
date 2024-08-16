@@ -1056,7 +1056,7 @@ body > footer .copyrights {
 
 /* Mudança de cor no hover */
 .timeline-item .item-small a:hover {
-  color: rgb(27, 168, 22); /* Muda para verde no hover */
+  color: rgb(71, 235, 65); /* Muda cor do hover */
 }
 
 
