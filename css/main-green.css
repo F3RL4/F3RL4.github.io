@@ -106,6 +106,15 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
 }
 
+h7 {
+  color: #c2c2c2;
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 p {
   font-size: 15px;
   margin: 0 0 10px;
@@ -2643,3 +2652,55 @@ blockquote footer, blockquote small, blockquote .small {
   text-decoration: none;
   cursor: pointer;
 }
+
+.qr-code-container {
+  background-color: #1c1c1c;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: auto;
+  margin-top: 20px;
+  display: inline-block;
+  max-width: 100%; /* Permite que o contêiner cresça conforme o QR Code */
+}
+.form-control {
+  width: calc(100% - 20px); /* Largura ajustável */
+  max-width: 300px;
+  padding: 8px;
+  margin: 10px auto;
+  background: #333;
+  border: 1px solid #444;
+  color: #ffffff;
+  border-radius: 4px;
+  outline: none;
+  transition: none;
+  text-align: center; /* Centraliza o texto dentro da caixa */
+}
+.form-control:focus {
+  background: #333; /* Mesma cor do fundo */
+  border: 1px solid #444; /* Mesma cor da borda */
+  box-shadow: none; /* Remove a sombra padrão */
+}
+
+.btn:hover {
+  background-color: #33ff00;
+}
+#save-btn {
+  margin-left: 10px;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+#save-btn.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+#qrcode-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
+}  

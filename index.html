@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/modernizr.custom.js"></script>
+  <script src="js/qrcode.js"></script>
 </head>
 
 <body class="material-template">
@@ -57,6 +58,9 @@
             </li>
             <li>
               <a class="pt-trigger" href="index.html#portfolio">Portfólio</a>
+            </li>
+            <li>
+              <a class="pt-trigger" href="index.html#gerarqrcode">Gerar QR Code</a>
             </li>
           </ul>
           <!-- /Main menu -->
@@ -863,6 +867,98 @@
             </div>
           </section>
           <!-- /Portfolio Subpage -->
+
+          <!-- QR Code Subpage -->
+          <section class="pt-page" data-id="gerarqrcode">
+            <div class="section-inner custom-page-content">
+              <div class="page-header color-1">
+                <h2>Gerar QR Code</h2>
+              </div>
+              <div class="page-content">
+                <!-- QR Code Content -->
+                <div class="portfolio-content">
+                  <!-- QR Code Grid -->
+                  <div id="qr-code-grid" class="portfolio-grid portfolio-masonry masonry-grid-3" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+                    <!-- Inicio QR Code gerar_qrcode.html-->
+                    <div class="qr-code-container" style="width: 100%; max-width: 500px; background-color: #1c1c1c; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); text-align: center;">
+                      <h7 class="description" style="margin-bottom: 20px;">Insira a URL ou o texto desejado abaixo:</h7>                            
+                      <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control" style="margin-bottom: 10px;">
+                      <h7 class="description" style="margin-bottom: 10px;">Insira o tamanho desejado (em pixels):</h7>
+                      <input type="number" id="size" value="300" min="100" max="1000" class="form-control" style="margin-bottom: 20px;">
+                      <div style="margin-bottom: 20px;">
+                        <button class="btn-secondary" onclick="gerarQRCode()">Gerar QR Code</button>
+                        <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()">Salvar</button>
+                      </div>
+                      <div id="qrcode-container" style="text-align: center;">
+                        <div id="qrcode"></div>
+                      </div>
+                    </div>
+                    <!-- Fim QR Code gerar_qrcode.html-->
+                  </div>
+                  <!-- /QR Code Grid -->
+                </div>
+                <!-- /QR Code Content -->
+              </div>
+            </div>
+          </section>
+          <!-- /end of QR Code Subpage -->
+
+          <script type="text/javascript">
+              function gerarQRCode() {
+                  var url = document.getElementById("url").value;
+                  var size = parseInt(document.getElementById("size").value);
+
+                  if (!url) {
+                      alert("Por favor, insira uma URL ou texto.");
+                      return;
+                  }
+
+                  if (isNaN(size) || size < 100 || size > 1000) {
+                      alert("Por favor, insira um tamanho válido entre 100 e 1.000 pixels.");
+                      return;
+                  }
+
+                  // Limpa o QR code anterior, se houver
+                  document.getElementById("qrcode").innerHTML = "";
+
+                  // Gera o QR code
+                  new QRCode(document.getElementById("qrcode"), {
+                      text: url,
+                      width: size,
+                      height: size
+                  });
+
+                  // Habilita o botão de salvar após a geração do QR code
+                  var saveBtn = document.getElementById("save-btn");
+                  saveBtn.classList.add("enabled");
+                  saveBtn.disabled = false;
+              }
+
+              function salvarQRCode() {
+                  var canvas = document.querySelector("#qrcode canvas");
+                  if (canvas) {
+                      var link = document.createElement("a");
+                      link.href = canvas.toDataURL("image/png");
+                      link.download = "qrcode.png";
+                      link.click();
+                  } else {
+                      alert("Por favor, gere um QR Code primeiro.");
+                  }
+              }
+          </script>
+                    
+                    </body>
+                    </html><!-- Fim QR Code gerar_qrcode.html-->
+
+                  </div>
+                  <!-- /QR Code Grid -->
+                </div>
+                <!-- /QR Code Content -->
+              </div>
+            </div>
+          </section>
+          <!-- /end of QR Code Subpage -->          
+
 
         </div>
       </div>
