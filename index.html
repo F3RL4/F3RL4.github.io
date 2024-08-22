@@ -869,26 +869,26 @@
           <!-- /Portfolio Subpage -->
 
           <!-- QR Code Subpage -->
-          <section class="pt-page" data-id="gerarqrcode" style="padding-top: 20px;">
+          <section class="pt-page" data-id="gerarqrcode" style="display: flex; justify-content: center; align-items: flex-start; padding-top: 20px; min-height: 100vh;">
             <div class="section-inner custom-page-content">
-                <div class="page-header color-1">
+                <div class="page-header color-1" style="text-align: center;">
                     <h2>Gerar QR Code</h2>
                 </div>
                 <div class="page-content">
                     <!-- QR Code Content -->
-                    <div class="portfolio-content">
+                    <div class="portfolio-content" style="display: flex; justify-content: center;">
                         <!-- QR Code Grid -->
-                        <div id="qr-code-grid" class="portfolio-grid portfolio-masonry masonry-grid-3" style="display: flex; justify-content: center; align-items: flex-start; min-height: 400px;">
+                        <div id="qr-code-grid" class="portfolio-grid portfolio-masonry masonry-grid-3" style="width: 100%; max-width: 500px;">
                             <!-- Inicio QR Code gerar_qrcode.html-->
-                            <div class="qr-code-container" style="width: 100%; max-width: 500px; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(46, 252, 56, 0.5); text-align: center; background-color: #1c1c1c; margin-top: 0;">
+                            <div class="qr-code-container" style="width: 100%; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(46, 252, 56, 0.5); text-align: center; background-color: #1c1c1c; margin-top: 0;">
                                 <h7 class="description" style="margin-bottom: 20px; display:block;">Insira a URL ou o texto desejado abaixo:</h7>                            
                                 <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control" style="margin-bottom: 20px; width: 100%; max-width: 400px; margin: auto;">
                                 <div style="display: flex; justify-content: space-between; margin-top: 20px; margin-bottom: 20px;">
-                                  <button class="btn-secondary" onclick="gerarQRCode()" style="flex:auto; max-width: 130px; padding: 8px;">Gerar QR Code</button>
-                                  <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled style="flex:auto; max-width: 130px; padding: 8px;">Salvar</button>
-                              </div>
+                                    <button class="btn-secondary" onclick="gerarQRCode()" style="flex:auto; max-width: 130px; padding: 8px;">Gerar QR Code</button>
+                                    <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled style="flex:auto; max-width: 130px; padding: 8px;">Salvar</button>
+                                </div>
                                 <div id="qrcode-container" style="text-align: center;">
-                                    <div id="qrcode" style="display: inline-block;"></div>
+                                    <div id="qrcode" style="display: inline-block;" onclick="abrirQRCodeModal()"></div>
                                 </div>
                             </div>
                             <!-- Fim QR Code gerar_qrcode.html-->
@@ -899,12 +899,17 @@
                 </div>
             </div>
         </section>
-        <!-- /end of QR Code Subpage -->
+        
+        <!-- Modal para exibir o QR Code em tela cheia -->
+        <div id="qrCodeModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); text-align: center;">
+            <span onclick="fecharQRCodeModal()" style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+            <img id="qrCodeModalImg" style="margin: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 80%;">
+        </div>
         
         <script type="text/javascript">
             function gerarQRCode() {
                 var url = document.getElementById("url").value;
-                var size = Math.min(window.innerWidth * 0.6, 300); // Tamanho fixo padrão de 300 pixels
+                var size = Math.min(window.innerWidth * 0.8, 300); // 80% da largura da tela ou 300px
         
                 if (!url) {
                     alert("Por favor, insira uma URL ou texto.");
@@ -925,15 +930,26 @@
                 document.getElementById("save-btn").disabled = false;
             }
         
-            function salvarQRCode() {
+            function abrirQRCodeModal() {
                 var canvas = document.querySelector("#qrcode canvas");
                 if (canvas) {
-                    var link = document.createElement("a");
-                    link.href = canvas.toDataURL("image/png");
-                    link.download = "qrcode.png";
-                    link.click();
-                } else {
-                    alert("Por favor, gere um QR Code primeiro.");
+                    var modal = document.getElementById("qrCodeModal");
+                    var modalImg = document.getElementById("qrCodeModalImg");
+                    modalImg.src = canvas.toDataURL("image/png");
+                    modal.style.display = "block";
+                }
+            }
+        
+            function fecharQRCodeModal() {
+                var modal = document.getElementById("qrCodeModal");
+                modal.style.display = "none";
+            }
+        
+            // Fecha o modal ao clicar fora da imagem
+            window.onclick = function(event) {
+                var modal = document.getElementById("qrCodeModal");
+                if (event.target == modal) {
+                    modal.style.display = "none";
                 }
             }
         </script>
