@@ -869,7 +869,7 @@
           <!-- /Portfolio Subpage -->
 
           <!-- QR Code Subpage -->
-          <section class="pt-page" data-id="gerarqrcode">
+          <section class="pt-page" data-id="gerarqrcode" style="padding-top: 20px;">
             <div class="section-inner custom-page-content">
                 <div class="page-header color-1">
                     <h2>Gerar QR Code</h2>
@@ -880,15 +880,12 @@
                         <!-- QR Code Grid -->
                         <div id="qr-code-grid" class="portfolio-grid portfolio-masonry masonry-grid-3" style="display: flex; justify-content: center; align-items: flex-start; min-height: 400px;">
                             <!-- Inicio QR Code gerar_qrcode.html-->
-                            <div class="qr-code-container" style="width: 100%; max-width: 100%; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); text-align: center; margin-top: 20px; background-color: #1c1c1c;">
-                                <h7 class="description" style="margin-bottom: 20px; display: block;">Insira a URL ou o texto desejado abaixo:</h7>                            
-                                <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control" style="margin-bottom: 10px; width: 100%; max-width: 300px; margin: auto;">
-                                <h7 class="description" style="margin-bottom: 10px; display: block;">Insira o tamanho desejado (em pixels):</h7>
-                                <input type="number" id="size" value="300" min="100" max="1000" class="form-control" style="margin-bottom: 20px; width: 100%; max-width: 150px; margin: auto;">
-                                <div style="margin-bottom: 20px; display: flex; justify-content: space-around; flex-wrap: wrap;">
-                                    <button class="btn-secondary" onclick="gerarQRCode()">Gerar QR Code</button>
-                                    <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled>Salvar</button>
-                                    <button class="btn-secondary" id="clear-btn" onclick="limparQRCode()" disabled>Limpar</button>
+                            <div class="qr-code-container" style="width: 100%; max-width: 500px; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(46, 252, 56, 0.5); text-align: center; background-color: #1c1c1c; margin-top: 0;">
+                                <h7 class="description" style="margin-bottom: 20px; display:block;">Insira a URL ou o texto desejado abaixo:</h7>                            
+                                <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control" style="margin-bottom: 20px; width: 100%; max-width: 400px; margin: auto;">
+                                <div style="display: flex; justify-content: space-between; margin-top: 20px; margin-bottom: 20px;">
+                                    <button class="btn-secondary" onclick="gerarQRCode()" style="flex:auto; margin-right: 10px;">Gerar QR Code</button>
+                                    <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled style="flex: auto;">Salvar</button>
                                 </div>
                                 <div id="qrcode-container" style="text-align: center;">
                                     <div id="qrcode" style="display: inline-block;"></div>
@@ -901,39 +898,33 @@
                     <!-- /QR Code Content -->
                 </div>
             </div>
-          </section>
-          <!-- /end of QR Code Subpage -->
-
-          <script type="text/javascript">
+        </section>
+        <!-- /end of QR Code Subpage -->
+        
+        <script type="text/javascript">
             function gerarQRCode() {
                 var url = document.getElementById("url").value;
-                var size = parseInt(document.getElementById("size").value);
-
+                var size = 400; // Tamanho fixo padrão de 400 pixels
+        
                 if (!url) {
                     alert("Por favor, insira uma URL ou texto.");
                     return;
                 }
-
-                if (isNaN(size) || size < 100 || size > 1000) {
-                    alert("Por favor, insira um tamanho válido entre 100 e 1.000 pixels.");
-                    return;
-                }
-
+        
                 // Limpa o QR code anterior, se houver
                 document.getElementById("qrcode").innerHTML = "";
-
+        
                 // Gera o QR code
                 new QRCode(document.getElementById("qrcode"), {
                     text: url,
                     width: size,
                     height: size
                 });
-
-                // Habilita os botões de salvar e limpar após a geração do QR code
+        
+                // Habilita o botão de salvar após a geração do QR code
                 document.getElementById("save-btn").disabled = false;
-                document.getElementById("clear-btn").disabled = false;
             }
-
+        
             function salvarQRCode() {
                 var canvas = document.querySelector("#qrcode canvas");
                 if (canvas) {
@@ -945,20 +936,8 @@
                     alert("Por favor, gere um QR Code primeiro.");
                 }
             }
-
-            function limparQRCode() {
-                // Limpa o QR code
-                document.getElementById("qrcode").innerHTML = "";
-
-                // Desabilita os botões de salvar e limpar
-                document.getElementById("save-btn").disabled = true;
-                document.getElementById("clear-btn").disabled = true;
-
-                // Limpa os campos de entrada
-                document.getElementById("url").value = "";
-                document.getElementById("size").value = 300; // Valor padrão de 300 pixels
-            }
-          </script>
+        </script>
+        
 
                     
                     </body>

@@ -357,7 +357,7 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 }
 
 .btn-secondary:hover {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 4px rgba(5, 235, 16, 0.911), 0 4px 8px rgba(58, 243, 2, 0.3);
 }
 /* / buttons */
 
@@ -2672,8 +2672,8 @@ blockquote footer, blockquote small, blockquote .small {
   text-align: center; /* Centraliza o texto dentro da caixa */
 }
 .form-control:focus {
-  background: #333; /* Mesma cor do fundo */
-  border: 1px solid #444; /* Mesma cor da borda */
+  background: #f0f0f0; /* Mesma cor do fundo */
+  border: 1px solid #2bff00; /* Mesma cor da borda */
   box-shadow: none; /* Remove a sombra padrão */
 }
 
