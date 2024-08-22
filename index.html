@@ -884,9 +884,9 @@
                                 <h7 class="description" style="margin-bottom: 20px; display:block;">Insira a URL ou o texto desejado abaixo:</h7>                            
                                 <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control" style="margin-bottom: 20px; width: 100%; max-width: 400px; margin: auto;">
                                 <div style="display: flex; justify-content: space-between; margin-top: 20px; margin-bottom: 20px;">
-                                    <button class="btn-secondary" onclick="gerarQRCode()" style="flex:auto; margin-right: 10px;">Gerar QR Code</button>
-                                    <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled style="flex: auto;">Salvar</button>
-                                </div>
+                                    <button class="btn-secondary" onclick="gerarQRCode()" style="flex:auto; max-width: 150px; padding: 10px;">Gerar QR Code</button>
+                                    <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled style="flex:auto; max-width: 150px; padding: 10px;">Salvar</button>
+                              </div>
                                 <div id="qrcode-container" style="text-align: center;">
                                     <div id="qrcode" style="display: inline-block;"></div>
                                 </div>
@@ -904,7 +904,7 @@
         <script type="text/javascript">
             function gerarQRCode() {
                 var url = document.getElementById("url").value;
-                var size = 400; // Tamanho fixo padrão de 400 pixels
+                var size = Math.min(window.innerWidth * 0.7, 300); // Tamanho fixo padrão de 300 pixels
         
                 if (!url) {
                     alert("Por favor, insira uma URL ou texto.");
