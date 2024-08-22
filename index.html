@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Edimar Ferla</title>
+  <title>Flavio Fernandes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="description" content="Curriculum Vitae Edimar Ferla" />
+  <meta name="description" content="Curriculum Vitae Flavio Fernandes" />
   <meta name="keywords" content="curriculo, vitae, git, github, Ferla, Edimar, Ferla Interativa, Marketing Digital" />
   <link rel="shortcut icon" href="/images/icon/favicon.ico">
 
@@ -73,7 +73,7 @@
     <!-- Mobile Header -->
     <div class="mobile-header mobile-visible">
       <div class="mobile-logo-container">
-        <div class="mobile-site-title">Edimar Ferla</div>
+        <div class="mobile-site-title">Flavio Fernandes</div>
       </div>
 
       <a class="menu-toggle mobile-visible">
@@ -96,13 +96,13 @@
                 <div class="row">
                   <div class="col-sm-4 col-md-4 col-lg-4">
                     <div class="photo">
-                      <img src="images/avatar.png" alt="Edimar Ferla">
+                      <img src="images/avatar.png" alt="Flavio Fernandes">
                     </div>
                   </div>
 
                   <div class="col-sm-8 col-md-8 col-lg-8">
                     <div class="title-block">
-                      <h1>Edimar Ferla</h1>
+                      <h1>Flavio Fernandes</h1>
                       <div class="owl-carousel text-rotation">
                         <div class="item">
                           <div class="sp-subtitle">Consultoria e Mentoria Particular</div>
@@ -875,30 +875,23 @@
                 <h2>Gerar QR Code</h2>
               </div>
               <div class="page-content">
-                <!-- QR Code Content -->
-                <div class="portfolio-content">
-                  <!-- QR Code Grid -->
-                  <div id="qr-code-grid" class="portfolio-grid portfolio-masonry masonry-grid-3" style="display: flex; justify-content: center; align-items: flex-start; min-height: 400px;">
-                    <!-- Inicio QR Code gerar_qrcode.html-->
-                    <div class="qr-code-container" style="width: 100%; max-width: 500px; background-color: #1c1c1c; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); text-align: center; margin-top: 20px;">
-                      <h7 class="description" style="margin-bottom: 20px;">Insira a URL ou o texto desejado abaixo:</h7>                            
-                      <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control" style="margin-bottom: 10px;">
-                      <h7 class="description" style="margin-bottom: 10px;">Insira o tamanho desejado (em pixels):</h7>
-                      <input type="number" id="size" value="300" min="100" max="1000" class="form-control" style="margin-bottom: 20px;">
-                      <div style="margin-bottom: 20px; display: flex; justify-content: space-between; flex-wrap: wrap;">
-                        <button class="btn-secondary" onclick="gerarQRCode()">Gerar QR Code</button>
-                        <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled>Salvar</button>
-                        <button class="btn-secondary" id="clear-btn" onclick="limparQRCode()" disabled>Limpar</button>
-                      </div>
-                      <div id="qrcode-container" style="text-align: center;">
-                        <div id="qrcode"></div>
-                      </div>
-                    </div>
-                    <!-- Fim QR Code gerar_qrcode.html-->
+                <!-- QR Code Grid -->
+                <div id="qr-code-grid" class="portfolio-grid portfolio-masonry masonry-grid-3" style="display: flex; flex-direction: column; align-items: center; min-height: 400px;">
+                  <!-- QR Code Content -->
+                  <h4 class="description" style="margin-bottom: 20px; text-align: center;">Insira a URL ou o texto desejado abaixo:</h4>                            
+                  <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control" style="margin-bottom: 10px;">
+                  <h4 class="description" style="margin-bottom: 10px; text-align: center;">Insira o tamanho desejado (em pixels):</h4>
+                  <input type="number" id="size" value="300" min="100" max="1000" class="form-control" style="margin-bottom: 20px;">
+                  <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn-secondary" onclick="gerarQRCode()">Gerar QR Code</button>
+                    <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled>Salvar</button>
+                    <button class="btn-secondary" id="clear-btn" onclick="limparQRCode()" disabled>Limpar</button>
                   </div>
-                  <!-- /QR Code Grid -->
+                  <div id="qrcode-container" style="text-align: center; margin-top: 20px;">
+                    <div id="qrcode"></div>
+                  </div>
                 </div>
-                <!-- /QR Code Content -->
+                <!-- /QR Code Grid -->
               </div>
             </div>
           </section>
@@ -981,7 +974,7 @@
     <!-- /Main Content -->
   </div>
   <footer>
-    <div class="copyrights">&copy; Todos os Direitos Reservados para Edimar Ferla de Almeida</div>
+    <div class="copyrights">&copy; Todos os Direitos Reservados para Flavio Fernandes de Almeida</div>
   </footer>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/pages-switcher.js"></script>
