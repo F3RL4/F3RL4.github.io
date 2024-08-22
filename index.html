@@ -907,64 +907,71 @@
         </div>
         
         <script type="text/javascript">
-            function gerarQRCode() {
-                var url = document.getElementById("url").value;
-                var size = Math.min(window.innerWidth * 0.6, 300); // 60% da largura da tela ou 300px
-        
-                if (!url) {
-                    alert("Por favor, insira uma URL ou texto.");
-                    return;
-                }
-        
-                // Limpa o QR code anterior, se houver
-                document.getElementById("qrcode").innerHTML = "";
-        
-                // Gera o QR code
-                new QRCode(document.getElementById("qrcode"), {
-                    text: url,
-                    width: size,
-                    height: size
-                });
-        
-                // Habilita o botão de salvar após a geração do QR code
-                document.getElementById("save-btn").disabled = false;
-            }
-        
-            function abrirQRCodeModal() {
-                var canvas = document.querySelector("#qrcode canvas");
-                if (canvas) {
-                    var modal = document.getElementById("qrCodeModal");
-                    var modalImg = document.getElementById("qrCodeModalImg");
-                    modalImg.src = canvas.toDataURL("image/png");
-                    modal.style.display = "block";
-                }
-            }
-        
-            function fecharQRCodeModal() {
-                var modal = document.getElementById("qrCodeModal");
-                modal.style.display = "none";
-            }
-        
-            // Fecha o modal ao clicar fora da imagem
-            window.onclick = function(event) {
-                var modal = document.getElementById("qrCodeModal");
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        
-            function salvarQRCode() {
-                var canvas = document.querySelector("#qrcode canvas");
-                if (canvas) {
-                    var link = document.createElement("a");
-                    link.href = canvas.toDataURL("image/png");
-                    link.download = "qrcode.png";
-                    link.click();
-                } else {
-                    alert("Por favor, gere um QR Code primeiro.");
-                }
-            }
-        </script>
+          function gerarQRCode() {
+              var url = document.getElementById("url").value;
+              var size = Math.min(window.innerWidth * 0.6, 300); // 60% da largura da tela ou 300px
+      
+              if (!url) {
+                  alert("Por favor, insira uma URL ou texto.");
+                  return;
+              }
+      
+              // Limpa o QR code anterior, se houver
+              document.getElementById("qrcode").innerHTML = "";
+      
+              // Gera o QR code
+              new QRCode(document.getElementById("qrcode"), {
+                  text: url,
+                  width: size,
+                  height: size
+              });
+      
+              // Habilita o botão de salvar após a geração do QR code
+              document.getElementById("save-btn").disabled = false;
+          }
+      
+          function abrirQRCodeModal() {
+              var canvas = document.querySelector("#qrcode canvas");
+              if (canvas) {
+                  var modal = document.getElementById("qrCodeModal");
+                  var modalImg = document.getElementById("qrCodeModalImg");
+                  modalImg.src = canvas.toDataURL("image/png");
+                  modal.style.display = "block";
+              }
+          }
+      
+          function fecharQRCodeModal() {
+              var modal = document.getElementById("qrCodeModal");
+              modal.style.display = "none";
+          }
+      
+          // Fecha o modal ao clicar fora da imagem
+          window.onclick = function(event) {
+              var modal = document.getElementById("qrCodeModal");
+              if (event.target == modal) {
+                  modal.style.display = "none";
+              }
+          }
+      
+          function salvarQRCode() {
+              var canvas = document.querySelector("#qrcode canvas");
+              if (canvas) {
+                  var link = document.createElement("a");
+                  link.href = canvas.toDataURL("image/png");
+                  link.download = "qrcode.png";
+                  link.click();
+              } else {
+                  alert("Por favor, gere um QR Code primeiro.");
+              }
+          }
+      
+          // Adiciona suporte para Enter/Ir no campo de texto
+          document.getElementById("url").addEventListener("keyup", function(event) {
+              if (event.key === "Enter") {
+                  gerarQRCode();
+              }
+          });
+      </script>
         
 
                     
