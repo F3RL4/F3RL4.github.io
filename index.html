@@ -869,21 +869,21 @@
           <!-- /Portfolio Subpage -->
 
           <!-- QR Code Subpage -->
-          <section class="pt-page" data-id="gerarqrcode" style="display: flex; justify-content: center; align-items: flex-start; padding-top: 20px; min-height: 100vh;">
+          <section class="pt-page" data-id="gerarqrcode" style="display: flex; justify-content: center; align-items: flex-start; padding-top: 10px; min-height: 100vh;">
             <div class="section-inner custom-page-content">
                 <div class="page-header color-1" style="text-align: center;">
                     <h2>Gerar QR Code</h2>
                 </div>
-                <div class="page-content">
+                <div class="page-content" style="padding-top: 5px;">
                     <!-- QR Code Content -->
                     <div class="portfolio-content" style="display: flex; justify-content: center;">
                         <!-- QR Code Grid -->
                         <div id="qr-code-grid" class="portfolio-grid portfolio-masonry masonry-grid-3" style="width: 100%; max-width: 500px;">
                             <!-- Inicio QR Code gerar_qrcode.html-->
-                            <div class="qr-code-container" style="width: 100%; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(46, 252, 56, 0.5); text-align: center; background-color: #1c1c1c; margin-top: 0;">
-                                <h7 class="description" style="margin-bottom: 20px; display:block;">Insira a URL ou o texto desejado abaixo:</h7>                            
+                            <div style="width: 100%; padding: 20px; text-align: center; margin-top: 0;">
+                                <h7 class="description" style="margin-bottom: 20px; display:block; font-weight: bold;">Insira a URL ou o texto desejado:</h7>                            
                                 <input type="text" id="url" placeholder="Insira a URL ou texto" class="form-control" style="margin-bottom: 20px; width: 100%; max-width: 400px; margin: auto;">
-                                <div style="display: flex; justify-content: space-between; margin-top: 20px; margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; margin-top: 10px; margin-bottom: 20px;">
                                     <button class="btn-secondary" onclick="gerarQRCode()" style="flex:auto; max-width: 130px; padding: 8px;">Gerar QR Code</button>
                                     <button class="btn-secondary" id="save-btn" onclick="salvarQRCode()" disabled style="flex:auto; max-width: 130px; padding: 8px;">Salvar</button>
                                 </div>
@@ -909,7 +909,7 @@
         <script type="text/javascript">
             function gerarQRCode() {
                 var url = document.getElementById("url").value;
-                var size = Math.min(window.innerWidth * 0.7, 300); // 70% da largura da tela ou 300px
+                var size = Math.min(window.innerWidth * 0.8, 300); // 80% da largura da tela ou 300px
         
                 if (!url) {
                     alert("Por favor, insira uma URL ou texto.");

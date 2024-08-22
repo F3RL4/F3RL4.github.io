@@ -106,9 +106,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h7 {
-  color: #c2c2c2;
+  color: #1b1a1a;
   font-family: 'Montserrat', Helvetica, sans-serif;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1.5em;
   margin-top: 0;
   margin-bottom: 10px;
@@ -2649,7 +2649,7 @@ blockquote footer, blockquote small, blockquote .small {
   width: auto;
   margin-top: 20px;
   display: inline-block;
-  max-width: 100%; /* Permite que o contêiner cresça conforme o QR Code */
+  max-width: 100%; 
 }
 #qr-code-grid {
   display: flex;
@@ -2659,7 +2659,7 @@ blockquote footer, blockquote small, blockquote .small {
   padding-top: 20px;
 }
 .form-control {
-  width: calc(100% - 20px); /* Largura ajustável */
+  width: calc(100% - 20px); 
   max-width: 300px;
   padding: 8px;
   margin: 10px auto;
@@ -2669,12 +2669,12 @@ blockquote footer, blockquote small, blockquote .small {
   border-radius: 4px;
   outline: none;
   transition: none;
-  text-align: center; /* Centraliza o texto dentro da caixa */
+  text-align: center; 
 }
 .form-control:focus {
-  background: #f0f0f0; /* Mesma cor do fundo */
-  border: 1px solid #2bff00; /* Mesma cor da borda */
-  box-shadow: none; /* Remove a sombra padrão */
+  background: #f0f0f0; 
+  border: 1px solid #2bff00; 
+  box-shadow: none; 
 }
 
 .btn:hover {
