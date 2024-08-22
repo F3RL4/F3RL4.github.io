@@ -952,6 +952,18 @@
                     modal.style.display = "none";
                 }
             }
+        
+            function salvarQRCode() {
+                var canvas = document.querySelector("#qrcode canvas");
+                if (canvas) {
+                    var link = document.createElement("a");
+                    link.href = canvas.toDataURL("image/png");
+                    link.download = "qrcode.png";
+                    link.click();
+                } else {
+                    alert("Por favor, gere um QR Code primeiro.");
+                }
+            }
         </script>
         
 
