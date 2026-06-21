@@ -284,4 +284,7 @@
   </tr>
 </table>
 </p>
-![Alt](https://repobeats.axiom.co/api/embed/1b5a31bcdba5b42765395149df5012f4967e1bc0.svg "Repobeats analytics image")
+
+## 📊 Stats
+
+![Repobeats analytics](https://repobeats.axiom.co/api/embed/1b5a31bcdba5b42765395149df5012f4967e1bc0.svg 'Repobeats analytics image')
